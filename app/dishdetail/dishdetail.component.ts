@@ -7,29 +7,30 @@ import { RouterExtensions } from 'nativescript-angular/router';
 import 'rxjs/add/operator/switchMap';
 
 @Component({
-	selector: 'app-dishdetail',
-	moduleId: module.id,
-	templateUrl: './dishdetail.component.html',
+  selector: 'app-dishdetail',
+    moduleId: module.id,
+  templateUrl: './dishdetail.component.html'
 })
 export class DishdetailComponent implements OnInit {
-	
-	dish: Dish;
-	comment: Comment;
-	errMess: string;
 
-	constructor(private dishservice: DishService,
-		private route: ActivatedRoute,
-		private routerExtensions: RouterExtensions,
-		@Inject('BaseURL') private BaseURL) { }
+  dish: Dish;
+  comment: Comment;
+  errMess: string;
 
-	ngOnInit() {
-		this.route.params
-			.switchMap((params: Params) => this.dishservice.getDish(+params['id']))
-			.subscribe(dish => this.dish = dish,
-				errmess => {this.dish = null; this.errMess = <any>errmess;});
-	}
+  constructor(private dishservice: DishService,
+    private route: ActivatedRoute,
+    private routerExtensions: RouterExtensions,
+    @Inject('BaseURL') private BaseURL) { }
 
-	goBack(): void {
-		this.routerExtensions.back();
-	}
+  ngOnInit() {
+
+    this.route.params
+      .switchMap((params: Params) => this.dishservice.getDish(+params['id']))
+      .subscribe(dish => this.dish = dish,
+          errmess => { this.dish = null; this.errMess = <any>errmess; });
+  }
+
+  goBack(): void {
+    this.routerExtensions.back();
+  }
 }
