@@ -1,0 +1,24 @@
+<ActionBar title="Contact Us" class="action-bar">
+</ActionBar>
+<RadSideDrawer #drawerCompnent tkToggleNavButton showOverNavigation="true">
+	<ScrollView tkDrawerContent class="sidedrawer-left">
+		<StackLayout horizontalAlign="left">
+			<drawer-content></drawer-content>
+		</StackLayout>
+	</ScrollView>
+	<ScrollView orientation="vertical" tkMainContent class="page">
+        <GridLayout class="m-5" rows="auto auto">
+	        <StackLayout class="p-10 border"> 
+	        	<Label row="0" height="40" class="h3" text="Contact Inforamtion"></Label>
+	            <StackLayout row="1">
+	            	<Label class="body p-l-30" text="121, Clear Water Bay Road"></Label> 
+	            	<Label class="body p-l-30" text="Clear Water Bay, Kowloon"></Label> 
+	            	<Label class="body p-l-30" text="HONG KONG"></Label> 
+	            	<Label class="body p-l-30" text="Tel: +852 1234 5678"></Label> 
+	            	<Label class="body p-l-30" text="Fax: +852 8765 4321"></Label> 
+	            	<Label class="body p-l-30" text="Email:confusion@food.net    "></Label>      
+	            </StackLayout>
+        	</StackLayout>
+        </GridLayout>
+    </ScrollView>
+</RadSideDrawer>
