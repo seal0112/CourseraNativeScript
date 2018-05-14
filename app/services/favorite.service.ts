@@ -21,6 +21,7 @@ export class FavoriteService {
         if(!this.isFavorite(id)) {
             this.favorites.push(id);
         }
+        console.log(this.favorites.length);
         return true;
     }
 
